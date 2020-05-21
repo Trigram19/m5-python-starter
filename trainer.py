@@ -9,6 +9,7 @@ import torch.nn.functional as F
 
 from transformer import *
 from args import args
+from features import *
 
 X = Transformer(
     n_token=args["n_token"],
