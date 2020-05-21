@@ -40,7 +40,10 @@ train = train.drop(['dept_id'], axis=1)
 train = train.drop(['cat_id'], axis=1)
 train = train.drop(['store_id'], axis=1)
 train = train.drop(['state_id'], axis=1)
-X_train, y_train = T(train, test_size=0.1)
+X_train, _ = T(train, test_size=0.1)
+
+# A clarification: when using recursive features
+# using last day as labels is recommended
 
 #X_train = X_train.head(28)
 #X_train = torch.LongTensor(X_train.values)
@@ -56,7 +59,7 @@ for epoch in range(5):  # loop over the dataset multiple times
         optimizer.zero_grad()
 
         # forward + backward + optimize
-        outputs = X(inputs, torch.LongTensor(train.head(28).values.astype("float64")), crit=None, mems=None)
+        outputs = X(inputs, torch.LongTensor(train['d_1913'].head(28).values.astype("float64")), crit=None, mems=None)
         gc.collect()
         outputs = torch.FloatTensor(outputs)
         outputs.requires_grad = True
