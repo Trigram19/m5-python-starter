@@ -1,9 +1,9 @@
 import numpy as np # linear algebra
 import pandas as pd # data processing, CSV file I/O (e.g. pd.read_csv)
 import scipy;from scipy import stats
-sales = pd.read_csv('/data/sales_train_validation.csv')
-stonks = pd.read_csv('/data/sell_prices.csv')
-cal = pd.read_csv('/data/calendar.csv')
+sales = pd.read_csv('sales_train_validation.csv')
+stonks = pd.read_csv('sell_prices.csv')
+cal = pd.read_csv('calendar[1].csv')
 COLUMN_1 = [14, 30, 60, 120, 180, 360]
 COLUMN_2 = [7, 14, 28, 56]
 
