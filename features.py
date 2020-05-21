@@ -13,7 +13,7 @@ def rolling_mean_gen(df):
         return df
     
 def lag_feats(df):
-    for i in range(1, 58):
+    for i in range(1, 1913):
         df['lag_t14'] = df.groupby(['id'])[f'd_{i}'].transform(lambda x: x.shift(14))
         df['lag_t7'] = df.groupby(['id'])[f'd_{i}'].transform(lambda x: x.shift(7))
         df['lag_t28'] = df.groupby(['id'])[f'd_{i}'].transform(lambda x: x.shift(28))
@@ -26,7 +26,7 @@ def lag_feats(df):
         return df
     
 def fourier_et_al(df):
-    for i in range(1, 58):
+    for i in range(1, 1913):
         df['fourier_lag_t14'] = df.groupby(['id'])[f'd_{i}'].transform(lambda x: np.fft.fft(x.shift(14)))
         df['fourier_lag_t7'] = df.groupby(['id'])[f'd_{i}'].transform(lambda x: np.fft.fft(x.shift(7)))
         df['fourier_lag_t28'] = df.groupby(['id'])[f'd_{i}'].transform(lambda x: np.fft.fft(x.shift(28)))
@@ -68,5 +68,5 @@ import gc
 lag_feats(sales)
 rolling_mean_gen(sales)
 fourier_et_al(sales)
-sales.to_csv('sales_with_feat.csv', index=False)
+sales.to_csv('training.csv.zip', index=False)
 gc.collect()
