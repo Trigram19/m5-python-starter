@@ -13,7 +13,7 @@ It is structured like this:
 m5-python-starter
 |__________model.py
 |__________features.py
-|__________train.py
+|__________palsoftmax.py
 |__________data_______________
                             ||____sales_train_validation.csv
                             ||____sell_prices.csv
