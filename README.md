@@ -1,4 +1,4 @@
-# M5 Starter Notebook
+# M5 Starter (Python Version)
 
 Python framework for a good neural network for the Makidrakis 5 (M5) competition hosted on Kaggle.
 
